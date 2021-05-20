@@ -81,7 +81,34 @@
 
 .genres{
     margin-top: 10px;
-    font-family: 18px;
+    font-size: 18px;
     font-weight: 500;
     color: #999;
+}
+
+@media(max-width: 720px){
+    .Trending{
+        height: 80vh;
+    }
+
+    .title{
+        font-size: 30px;
+    }
+
+    .info{
+        font-size: 15px;
+    }
+
+    .overview{
+        max-width: 100%;
+        margin-right: 30px;
+    }
+
+    .buttom .playBtn, .addBtn{
+        font-size: 16px;
+    }
+    
+    .genres{
+        font-size: 15px;
+    }
 }

@@ -12,7 +12,7 @@
 }
 
 .listRow{
-    width: 9999999999px;
+    transition: all ease 0.4s;
 }
 
 .itemRow{
@@ -29,4 +29,37 @@
 
 .itemRow img:hover{
     transform: scale(1);
+}
+
+.NavIcon-left, .NavIcon-right{
+    position: absolute;
+    width: 40px;
+    height: 225px;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 60%);
+    cursor: pointer;
+    opacity: 0;
+    transition: all ease 0.2s;
+}
+
+.NavIcon-left{
+    left: 0;
+}
+
+.NavIcon-right{
+    right: 0;
+}
+
+.movieList:hover .NavIcon-left, .movieList:hover .NavIcon-right{
+    opacity: 1;
+}
+
+@media(max-width:720px){
+    .NavIcon-left, .NavIcon-right{
+        opacity: 1;
+    }
 }

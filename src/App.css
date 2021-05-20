@@ -18,3 +18,20 @@ body{
     margin-top: -150px;
 }
 
+footer{
+    margin: 50px 0;
+    text-align: center;
+}
+
+.loading{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background: #141414;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

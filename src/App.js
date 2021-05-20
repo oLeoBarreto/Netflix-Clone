@@ -23,14 +23,13 @@ export default() => {
       let chosen = trending[0].items.results[random]; //Escolhe um items aleatorio
       let chosenInfo = await movieDB.getMovieInfo(chosen.id, 'tv');
       setTrendingData(chosenInfo);
-      console.log(chosenInfo);
     }
 
     loadAll();
   },[]);
 
-  useEffect(()=> {
-    const scrollListner = () =>{
+  useEffect(()=> { //Evento de scroll para a navbar
+    const scrollListner = () =>{ 
       if(window.scrollY > 10){
         setBlackHeader(true);
       }else{
@@ -58,6 +57,19 @@ export default() => {
           <MovieList key={key} title={item.title} items={item.items}/>
         ))}    
       </section>
+
+      <footer>
+          Desenvolvido por Leonardo<br/> 
+          GitHub: https://github.com/LeoBarretocoder<br/>
+          Direito de imagem para Netflix<br/>
+          Dados dos filmes retirados do TMDB: https://www.themoviedb.org/
+      </footer>
+
+      {movieList.length <= 0 &&
+        <div className="loading">
+          <img src="https://media.filmelier.com/noticias/br/2020/03/Netflix_LoadTime.gif" alt="loading"/>
+        </div>
+      }
     </div>
   )
 }

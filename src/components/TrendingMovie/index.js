@@ -2,11 +2,18 @@ import React from 'react';
 import './trendingMovie.css';
 
 export default({item}) =>{
+
     let year = new Date(item.first_air_date);
     let genres = [];
     for(let i in item.genres){
         genres.push( item.genres[i].name );
     }
+
+    let overview = item.overview;
+    if (overview.length > 200){
+        overview = overview.substring(0, 210)+'...';
+    }
+
     return(
         <section className="Trending" style={{
             backgroundSize: 'cover',
@@ -21,7 +28,7 @@ export default({item}) =>{
                         <div className="date">{year.getFullYear()}</div>
                         <div className="seasons">{item.number_of_seasons} season{item.number_of_seasons !== 1 ? 's' : ''}</div>
                     </div>
-                    <div className="overview">{item.overview}</div>
+                    <div className="overview">{overview}</div>
                     <div className="buttom">
                         <a href={`/watch/${item.id}`} className="playBtn">► Assistir</a>
                         <a href={`/list/add/${item.id}`} className="addBtn">+ Minha lista</a>
